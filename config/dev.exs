@@ -16,7 +16,15 @@ config :dnd, DndWeb.Endpoint,
   secret_key_base: "AZp7Xyt9bQMeYxxFVPQenhXzt7TDC+ucXa3HaHlCeqqRPKe3WKmw2D5tGqANn8fG",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
+    npx: [
+      "tailwindcss",
+      "--input=css/app.css",
+      "--output=../priv/static/assets/app.css",
+      "--postcss",
+      "--watch",
+      cd: Path.expand("../assets", __DIR__)
+    ]
   ]
 
 # ## SSL Support
