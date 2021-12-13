@@ -1,5 +1,7 @@
 # Dnd
 
+A walkthrough for [Client-Side Drag and Drop](https://www.headway.io/blog/client-side-drag-and-drop-with-phoenix-liveview) tutorial.
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
