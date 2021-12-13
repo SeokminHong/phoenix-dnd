@@ -1,0 +1,23 @@
+<div phx-hook="Drag" id="drag">
+  <div class="dropzone grid gap-3" id="pool">
+    <%= for %{text: text, id: id} <- @pool do %>
+      <div draggable="true" id={id} class="draggable p-4 bg-blue-700 text-white"><%= text %></div>
+    <% end %>
+  </div>
+
+  <%= live_component DndWeb.PageLive.DropZoneComponent,
+    draggables: @drop_zone_a,
+    drop_zone_id: "drop_zone_a",
+    title: "Drop Zone A",
+    border_color: "border-orange-300",
+    item_color: "bg-orange-700"
+  %>
+
+  <%= live_component DndWeb.PageLive.DropZoneComponent,
+    draggables: @drop_zone_b,
+    drop_zone_id: "drop_zone_b",
+    title: "Drop Zone B",
+    border_color: "border-green-300",
+    item_color: "bg-green-700"
+  %>
+</div>

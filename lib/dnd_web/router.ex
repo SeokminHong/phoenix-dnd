@@ -18,6 +18,7 @@ defmodule DndWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    live "/dnd", PageLive, :index
   end
 
   # Other scopes may use custom stacks.
