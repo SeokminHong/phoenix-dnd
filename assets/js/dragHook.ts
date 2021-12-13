@@ -7,7 +7,6 @@ const dragHook = {
     const selector = `#${hook.el.id}`;
 
     document.querySelectorAll(".dropzone").forEach((dropzone) => {
-      console.log(dropzone);
       new Sortable(dropzone as HTMLElement, {
         animation: 0,
         delay: 50,
